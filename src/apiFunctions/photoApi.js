@@ -1,9 +1,9 @@
-const API_KEY = "321328412559259";
-const API_SECRET = "vToThzjK9HB24olLz6ZZG9Tovv0"
-
-
-const uploadCloudinary = (FILE)=>{
-    console.log(FILE);
+import  Axios from "axios";
+const photoRoute = "http://localhost:5000/images/upload"
+const uploadPhoto = async (FILE)=>{
+   const response = await Axios.post(photoRoute, {image: FILE});
+   return response;
+  
 }
 
-export default uploadCloudinary
+export {uploadPhoto}

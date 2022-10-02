@@ -1,15 +1,36 @@
-import photoApi from "../apiFunctions/photoApi" 
 import { useState } from "react";
+import { uploadPhoto } from "../apiFunctions/photoApi";
+import { registerUser } from "../apiFunctions/userAuth";
 const Register = () => {
-    const [profilePicture, setProfilePic] = useState()
+    const [profilePicture, setProfilePic] = useState();
+    const [error,setError] = useState(false);
     const handleSubmit = (e)=>{
         e.preventDefault();
-        const profilePicture = document.getElementById("profile-picture").files[0];
         const username = e.target.username.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const password2 = e.target.password2.value;
-        console.log(username,email,password,password2,profilePicture)
+        if(password !== password2){
+            setError("Passwords do not match");
+            setTimeout(()=>{setError("")},5000);
+        }else{
+            if(profilePicture){
+                const profilePicture = document.getElementById("profile-picture").files[0];
+                const reader = new FileReader();
+                reader.readAsDataURL(profilePicture);
+                reader.onloadend = () => {
+                    uploadPhoto(reader.result).then(response => { registerUser(username,password,email,response.data)});
+                };
+             
+            }else{
+                registerUser(username,email,password,"none");
+            }
+            
+
+        }
+     
+        
+      
        
     }
     return (  
@@ -25,11 +46,12 @@ const Register = () => {
                 <input name="password2" type="text" placeholder="Confirm password" required/>
                </div>
                <div className="bottom">
-                    <input onChange={(e)=>{setProfilePic(URL.createObjectURL(e.target.files[0]))}}id="profile-picture" name="file" type="file" placeholder="Add picture" required/>
+                    <input onChange={(e)=>{setProfilePic(URL.createObjectURL(e.target.files[0]))}}id="profile-picture" name="file" type="file" placeholder="Add picture" />
                     <button>Register</button>
                </div>
             </form>
             {profilePicture ? <img src={profilePicture}/> : <h4>Picture not selected</h4>}
+            <h4>{error}</h4>
         </>
     );
 }
