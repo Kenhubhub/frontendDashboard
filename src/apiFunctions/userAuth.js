@@ -1,20 +1,20 @@
 import Axios from "axios";
 const login_URI = "http://localhost:5000/user/login"
 const register_URI = "http://localhost:5000/user/register"
-const loginUser = (username,password) => {
-    Axios.post(login_URI,{username,password}).then( response =>{
-        console.log(response);
-    })
+const loginUser = async (username,password) => {
+    const response = await Axios.post(login_URI,{username,password});
+    return response;
+    
 }
 const registerUser = async (username,password,email,profilePicture)=>{
     await Axios.post(register_URI,
     {
-        username,
         email,
+        username,
         password,
         profilePicture
     }).then(response => {
-        console.log(response);
+        console.log("Registration Successful");
     })
 }
  

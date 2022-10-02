@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import { uploadPhoto } from "../apiFunctions/photoApi";
 import { registerUser } from "../apiFunctions/userAuth";
 const Register = () => {
@@ -10,6 +11,7 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const password2 = e.target.password2.value;
+        
         if(password !== password2){
             setError("Passwords do not match");
             setTimeout(()=>{setError("")},5000);
@@ -23,7 +25,7 @@ const Register = () => {
                 };
              
             }else{
-                registerUser(username,email,password,"none");
+                registerUser(username,password,email,"none");
             }
             
 
