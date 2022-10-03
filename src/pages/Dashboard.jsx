@@ -33,8 +33,8 @@ const Dashboard = ({loggedIn, User}) => {
               <WeatherCard/>
               <NewsCard />
               <SportsCard />
-              <PhotoCard />
-              <TaskCard />
+              <PhotoCard User = {User}/>
+              <TaskCard userId = {User.data._id}/>
               <ClothesCard />
             </div>
         </div>

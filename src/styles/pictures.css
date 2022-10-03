@@ -1,0 +1,36 @@
+.pictures-page{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url("../../public/Assets-and-Screens/Assets/Background.png");
+    color: white;
+    background-size: cover;
+}
+.pictures-page h1{
+    text-align: center;
+    font-size: 3em;
+    padding: 2em;
+}
+.gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1em;
+}
+.image-hold{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../public/Assets-and-Screens/Assets/Add_picture.png);
+    background-repeat: no-repeat;
+    width: 421px;
+    height: 238px;
+    cursor: pointer;
+    margin: auto auto;
+}
+.image-hold img{
+    object-fit: cover;
+    max-height: 280px;
+    max-width: 280px;
+}
+#picture-upload{
+    display: none;
+}

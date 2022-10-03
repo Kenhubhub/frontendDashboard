@@ -1,0 +1,24 @@
+.small-gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3em;
+    padding: 1em;
+    row-gap: 1em;
+    justify-items: center;
+}
+
+.image-hold-small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../public/Assets-and-Screens/Assets/Add_picture.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    
+}
+.image-hold-small img{
+    object-fit: cover;
+}
