@@ -25,7 +25,7 @@ const Pictures = ({User}) => {
         <div className="pictures-page">
             <h1>Photos</h1>
             <div className="gallery">
-             <div className="image-hold">
+             <div className="upload-img">
             
                 <input onChange={setPic} id="picture-upload" name="file" type="file" />
                 <img onClick={triggerUpload}src={Plus_button} min-height="238" min-width="421"/>

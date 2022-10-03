@@ -19,17 +19,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../../public/Assets-and-Screens/Assets/Add_picture.png);
-    background-repeat: no-repeat;
-    width: 421px;
-    height: 238px;
     cursor: pointer;
     margin: auto auto;
+    
+}
+.upload-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../public/Assets-and-Screens/Assets/Add_picture.png);
+    background-repeat: no-repeat;
+    height: 238px;
+    width: 421px;
+    cursor: pointer;
+    margin: auto auto;
+    background-size: cover;
 }
 .image-hold img{
-    object-fit: cover;
-    max-height: 280px;
-    max-width: 280px;
+    
+    height: 280px;
+    width: 280px;
 }
 #picture-upload{
     display: none;
