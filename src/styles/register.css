@@ -1,0 +1,88 @@
+.register-page{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url("../../public/Assets-and-Screens/Assets/Background.png");
+    color: white;
+    background-size: cover;
+}
+.register-page input::placeholder{
+    color: white;
+}
+.register-page input{
+   font-size: 2em;
+    color: white;
+    background-color:  rgba(255,255,255,0);
+    border-style: none;
+    border-bottom: 2px solid white;
+    outline: none;
+}
+.register-page h1{
+    font-size: 3em;
+    text-align: center;
+    padding: 1em;
+}
+.register-page .top{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-bottom: 10em;
+}
+
+.register-page .middle{
+ display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-bottom: 5em;
+}
+.register-page .bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.file-upload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../public/Assets-and-Screens/Assets/Add_picture.png);
+    background-repeat: no-repeat;
+    width: 421px;
+    height: 238px;
+    cursor: pointer;
+    margin: auto auto;
+}
+.register-page input[type="file"]{
+    display: none;
+}
+.register-page .button-container{
+    text-align: center;
+}
+
+.button-container button{
+    background-color: rgb(250, 235, 101);
+    padding: 1em 5em;
+    font-size: 2em;
+    border-radius: 5em;
+    border: none;
+    margin: 1em 0em
+}
+.button-container button:hover{
+    cursor: pointer;
+   background-color: rgb(241, 221, 32) ;
+}
+@media only screen and (max-width: 600px) {
+    .register-page input{
+        font-size: 1em;
+         color: white;
+         background-color:  rgba(255,255,255,0);
+         border-style: none;
+         border-bottom: 2px solid white;
+         outline: none;
+     }
+     .register-page .top, .register-page .middle{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-bottom: 5em;
+     }
+ 
+  }

@@ -1,0 +1,56 @@
+.dashboard-page{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url("../../public/Assets-and-Screens/Assets/Background.png");
+    background-size: cover;
+    color: white;
+}
+
+.dashboard-header{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 2em;
+}
+.dashboard-header .header{
+    display: flex;
+    align-items:center;
+}
+.dashboard-header .header h1{
+   font-size: 4em;
+}
+.dashboard-header .image-holder{
+    border-style: solid;
+    border-color: black;
+    background-color: rgba(0, 0, 0, 0.13);
+    width: 130px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-header .image-holder img{
+   object-fit: cover;
+}
+.dashboard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 1em;
+}
+.card{
+    width: 421px;
+    height: 309px;
+    margin: 1em;
+    border-radius: 1em;
+    border-style: solid;
+    border-color:rgb(250, 235, 101);
+}
+.card h1{
+    text-align: center;
+    background-color: rgb(250, 235, 101);
+    color: black;
+    font-size: 2em;
+    font-weight: lighter;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius:0.3em;
+}

@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { uploadPhoto } from "../apiFunctions/photoApi";
 import { registerUser } from "../apiFunctions/userAuth";
+import "../styles/register.css"
 const Register = () => {
     const [profilePicture, setProfilePic] = useState();
     const [error,setError] = useState(false);
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault();
         const username = e.target.username.value;
         const email = e.target.email.value;
@@ -20,23 +21,25 @@ const Register = () => {
                 const profilePicture = document.getElementById("profile-picture").files[0];
                 const reader = new FileReader();
                 reader.readAsDataURL(profilePicture);
-                reader.onloadend = () => {
-                    uploadPhoto(reader.result).then(response => { registerUser(username,password,email,response.data)});
+                reader.onloadend = async () => {
+                    const response  = await uploadPhoto(reader.result);
+                    const registerResponse = await registerUser(username,password,email,response.data);
+                    console.log(registerResponse)
                 };
              
             }else{
-                registerUser(username,password,email,"none");
+                const registerResponse = await registerUser(username,password,email,"none");
+                console.log(registerResponse)
             }
             
 
-        }
-     
-        
-      
-       
+        }}
+    const triggerUpload = ()=>{
+        const profilePicture = document.getElementById("profile-picture");
+        profilePicture.click();
     }
     return (  
-        <>  
+        <div className="register-page">  
             <h1>Dev Challenge</h1>
             <form onSubmit={ (e)=> handleSubmit(e)}>
                 <div className="top">
@@ -48,13 +51,19 @@ const Register = () => {
                 <input name="password2" type="text" placeholder="Confirm password" required/>
                </div>
                <div className="bottom">
-                    <input onChange={(e)=>{setProfilePic(URL.createObjectURL(e.target.files[0]))}}id="profile-picture" name="file" type="file" placeholder="Add picture" />
-                    <button>Register</button>
+                    <div className="file-upload" onClick={triggerUpload}>
+                        <input onChange={(e)=>{setProfilePic(URL.createObjectURL(e.target.files[0]))}}id="profile-picture" name="file" type="file" placeholder="Add picture" />
+                        {profilePicture ? <img src={profilePicture} min-height="238" min-width="421"/> : <h4>Add Picture</h4>}       
+                    </div>
                </div>
+                <div className="button-container">
+                    <button>Register</button>
+
+                </div>
             </form>
-            {profilePicture ? <img src={profilePicture}/> : <h4>Picture not selected</h4>}
+            
             <h4>{error}</h4>
-        </>
+        </div>
     );
 }
  

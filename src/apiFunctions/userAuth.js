@@ -7,15 +7,14 @@ const loginUser = async (username,password) => {
     
 }
 const registerUser = async (username,password,email,profilePicture)=>{
-    await Axios.post(register_URI,
+    const registeredResponse =  await Axios.post(register_URI,
     {
         email,
         username,
         password,
         profilePicture
-    }).then(response => {
-        console.log("Registration Successful");
     })
+    return registeredResponse;
 }
  
 export {loginUser,registerUser};

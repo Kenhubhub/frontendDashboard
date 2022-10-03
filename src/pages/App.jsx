@@ -7,14 +7,15 @@ import Register from './Register';
 
 const App = () => {
     const [loggedIn, setLoggedIn] = useState(false);
-    
+    const [User, setUser] = useState();
     return ( 
         <div className="App">
             <Router>
                 <Routes>
-                    <Route path="/" element={<Login setLoggedIn={setLoggedIn}/>}></Route>
+                    <Route path="/" element={<Login setUser = {setUser} setLoggedIn={setLoggedIn}/>}></Route>
                     <Route path="/register" element={<Register/>}></Route>
-                    <Route path="/dashboard" element={<Dashboard loggedIn={loggedIn}/>}></Route>
+                    <Route path="/dashboard" element={<Dashboard User={User} loggedIn={loggedIn}/>}></Route>
+                    
                 </Routes>
             </Router>
         </div>
