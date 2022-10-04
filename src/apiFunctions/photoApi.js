@@ -23,4 +23,4 @@ const deletePicture = async(id)=>{
    const deleteResponse = await Axios.delete(url);
    return deleteResponse;
 }
-export {uploadPhoto,uploadGallery, getPictures}
+export {uploadPhoto,uploadGallery, getPictures, deletePicture}
