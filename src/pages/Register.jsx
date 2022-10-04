@@ -57,7 +57,7 @@ const Register = () => {
                <div className="bottom">
                     <div className="file-upload" onClick={triggerUpload}>
                         <input onChange={(e)=>{setProfilePic(URL.createObjectURL(e.target.files[0]))}}id="profile-picture" name="file" type="file" placeholder="Add picture" />
-                        {profilePicture ? <img src={profilePicture} min-height="238" min-width="421"/> : <h4>Add Picture</h4>}       
+                        {profilePicture ? <img src={profilePicture} /> : <h4>Add Picture</h4>}       
                     </div>
                </div>
                 <div className="button-container">

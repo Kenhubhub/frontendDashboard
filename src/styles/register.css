@@ -50,6 +50,10 @@
     cursor: pointer;
     margin: auto auto;
 }
+.file-upload img{
+    width: 421px;
+    height: 238px;
+}
 .register-page input[type="file"]{
     display: none;
 }
