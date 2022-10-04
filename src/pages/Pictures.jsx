@@ -1,6 +1,6 @@
 import Plus_button from "./Plus_button.png"
 import "../styles/pictures.css"
-import { uploadGallery,getPictures } from "../apiFunctions/photoApi"
+import { uploadGallery,getPictures,deletePicture } from "../apiFunctions/photoApi"
 import { useState, useEffect } from "react"
 const Pictures = ({User}) => {
     const [pictures,setPictures] = useState();
