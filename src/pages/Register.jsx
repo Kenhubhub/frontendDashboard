@@ -27,13 +27,13 @@ const Register = () => {
                     const registerResponse = await registerUser(username,password,email,response.data);
                     setError("Success!");
                     
-                    navigate("/login")
+                    navigate("/")
                 };
              
             }else{
                 const registerResponse = await registerUser(username,password,email,"none");
                 setError("Success!");
-                navigate("/login")
+                navigate("/")
             }
             
 
