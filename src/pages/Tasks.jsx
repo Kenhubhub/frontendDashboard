@@ -44,7 +44,7 @@ const Tasks = ({User}) => {
                 {!tasks? <h2>Loading...</h2>:
                 tasks.map(task =>(
                     
-                    <div className="list-item"key={task._id}><button onClick={()=>{deleteTask(task._id)}}>delete</button> <input onChange={()=>{changeStatus(task._id)}}defaultChecked={task.status === "complete"}type="checkbox" /><p key={task._id}>{task.task}</p></div>
+                    <div className="list-item backbutton"key={task._id}><button onClick={()=>{deleteTask(task._id)}}>delete</button> <input onChange={()=>{changeStatus(task._id)}}defaultChecked={task.status === "complete"}type="checkbox" /><p key={task._id}>{task.task}</p></div>
                 )
                 )
                 }
