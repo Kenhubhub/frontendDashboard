@@ -35,8 +35,8 @@ const Sports = () => {
     }
     return ( 
         <div className="sports-page">
-            <h1>Sports Challenge</h1>
             <Back />
+            <h1>Sports Challenge</h1>
             <div className="sports-container">
                 
                 <form onSubmit={e=>{ getVictories(e)}}>

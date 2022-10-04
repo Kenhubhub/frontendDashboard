@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getTasks,updateTask,addTask,deleteTask} from "../apiFunctions/taskApi";
 import "../styles/tasks.css"
+import "../styles/dashboard.css"
 import Plus_button from "./Plus_button_small.png"
 import Back from "./Back";
 const Tasks = ({User}) => {
