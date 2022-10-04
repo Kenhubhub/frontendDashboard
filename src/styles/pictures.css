@@ -24,6 +24,10 @@
     margin: auto auto;
     
 }
+.image-hold button{
+    
+
+}
 .upload-img{
     display: flex;
     justify-content: center;
