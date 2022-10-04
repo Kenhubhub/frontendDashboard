@@ -1,0 +1,14 @@
+.weather-info{
+    padding: 1em;
+    color: black;
+}
+.weather-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.weather-bottom{
+    margin-top: 5em;
+    text-align: center;
+}

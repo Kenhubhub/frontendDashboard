@@ -47,6 +47,9 @@
     border-color:rgb(250, 235, 101);
     background-color: rgba(204, 204, 204, 0.63);
 }
+.card:hover{
+    cursor: pointer;
+}
 .card h1{
     text-align: center;
     background-color: rgb(250, 235, 101);

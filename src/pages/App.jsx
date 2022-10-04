@@ -6,6 +6,8 @@ import Login from './Login';
 import Register from './Register';
 import Tasks from "./Tasks";
 import Pictures from "./Pictures";
+import News from "./News";
+import Sports from "./Sports"
 const App = () => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [User, setUser] = useState();
@@ -18,6 +20,8 @@ const App = () => {
                     <Route path="/dashboard" element={<Dashboard User={User} loggedIn={loggedIn}/>}></Route>
                     <Route path="/Tasks" element={<Tasks User={User}/>}></Route>
                     <Route path="/pictures" element={<Pictures User={User}/>}></Route>
+                    <Route path="/news" element={<News/>}></Route>
+                    <Route path="/sports" element={<Sports/>}></Route>
                 </Routes>
             </Router>
         </div>
