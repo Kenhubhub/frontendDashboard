@@ -18,5 +18,9 @@ const getPictures = async(id) =>{
    const images = await Axios.get(URI);
    return images
 }
-
+const deletePicture = async(id)=>{
+   const url = getRoute + id;
+   const deleteResponse = await Axios.delete(url);
+   return deleteResponse;
+}
 export {uploadPhoto,uploadGallery, getPictures}
