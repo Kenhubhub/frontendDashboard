@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { uploadPhoto } from "../apiFunctions/photoApi";
 import { registerUser } from "../apiFunctions/userAuth";
 import "../styles/register.css"
 const Register = () => {
+    const navigate = useNavigate();
     const [profilePicture, setProfilePic] = useState();
     const [error,setError] = useState(false);
     const handleSubmit = async (e)=>{
@@ -24,12 +25,15 @@ const Register = () => {
                 reader.onloadend = async () => {
                     const response  = await uploadPhoto(reader.result);
                     const registerResponse = await registerUser(username,password,email,response.data);
-                    console.log(registerResponse)
+                    setError("Success!");
+                    
+                    navigate("/login")
                 };
              
             }else{
                 const registerResponse = await registerUser(username,password,email,"none");
-                console.log(registerResponse)
+                setError("Success!");
+                navigate("/login")
             }
             
 
