@@ -31,7 +31,13 @@ const Pictures = ({User}) => {
                 <img onClick={triggerUpload}src={Plus_button} min-height="238" min-width="421"/>
             </div>
                 {!pictures ? <h4>Loading....</h4> :
-                    pictures.map(picture=><div key={picture._id}className="image-hold"><img src={picture.URL} alt="" /></div>)
+                    pictures.map(picture=>(
+                    <div key={picture._id}className="image-hold"> 
+                    
+                    <img src={picture.URL} alt="" /> 
+                    
+                    <button onClick={()=>{deletePicture(picture._id)}}>delete</button> </div> ) )
+                    
                 }
             </div>
         </div>
