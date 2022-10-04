@@ -1,5 +1,5 @@
 import Axios from "axios"
-const TasksURI = "http://localhost:5000/tasks/"
+const TasksURI = "https://backendapidashboard.herokuapp.com/tasks/"
 
 const getTasks = async(id) =>{
     const URI = TasksURI + id;

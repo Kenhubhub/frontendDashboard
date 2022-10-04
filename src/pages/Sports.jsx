@@ -1,5 +1,6 @@
 import { getCSV } from "../apiFunctions/sportsApi";
 import { useEffect, useState} from "react";
+import "../styles/Sports.css"
 const Sports = () => {
     const[data,setData] = useState();
     const [beatenTeams, setBeaten] = useState()
@@ -32,17 +33,21 @@ const Sports = () => {
         }
     }
     return ( 
-        <>
-            <form onSubmit={e=>{ getVictories(e)}}>
-                <input name="team" type="text" placeholder="Enter team"/>
-                <button type="submit">Submit</button>
-            </form>
-            {!beatenTeams? <h4>Not Available</h4> : 
-                beatenTeams.map(beat =>(
-                    <p>{beat}</p>
-                ))
-            }
-        </>
+        <div className="sports-page">
+            <h1>Sports Challenge</h1>
+            <div className="sports-container">
+                
+                <form onSubmit={e=>{ getVictories(e)}}>
+                    <input name="team" type="text" placeholder="Enter Winning Team"/>
+                    <button type="submit">Submit</button>
+                </form>
+                {!beatenTeams? <h4>Not Available</h4> : 
+                    beatenTeams.map(beat =>(
+                        <p className="teams-item">{beat}</p>
+                    ))
+                }
+            </div>
+        </div>
      );
 }
  

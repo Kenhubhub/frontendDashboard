@@ -1,5 +1,6 @@
 import { useEffect, useState} from "react";
 import {getNews,getMoreNews} from "../apiFunctions/newsApi";
+import "../styles/News.css"
 const News = () => {
     const [title, setTitle] = useState();
     const [description, setDescription] = useState()
@@ -24,13 +25,24 @@ const News = () => {
         <div className="news-page">
              <h1>News</h1>
              <div className="news-container">
-                <img src={image} alt="" />
-                <h2>{title}</h2>
-                <p>{description}</p>
-                {!para? <p>loading...</p> :
-                
-                para.map(p => <p>{p}</p>)
-                }
+                <div className="center">
+                    <img src={image} alt="" />
+
+                </div>
+                <h2 className="center">{title}</h2>
+                <div className="center">
+
+                <div>
+
+                    <p >{description}</p>
+                    {!para? <p className="center">loading...</p> :
+                    
+                    para.map(p => <p >{p}</p>)
+                    }
+
+                </div>
+
+                </div>
                 
              </div>
         </div>

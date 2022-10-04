@@ -1,0 +1,28 @@
+.news-page{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url("../../public/Assets-and-Screens/Assets/Background.png");
+    background-size: cover;
+    color: white;
+}
+.news-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    row-gap: 1em;
+    padding: 5em;
+}
+.news-page h1{
+    padding: 1em
+}
+.news-container img{
+    max-width: 700px;
+    max-height: 700px;
+}
+.center{
+    display: flex;
+    justify-content: center;
+}
+.text{
+    margin: 0 20em
+}

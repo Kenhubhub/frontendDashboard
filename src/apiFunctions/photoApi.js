@@ -1,7 +1,7 @@
 import  Axios from "axios";
-const photoRoute = "http://localhost:5000/images/upload"
-const GalleryRoute = "http://localhost:5000/images/uploadGallery"
-const getRoute = "http://localhost:5000/images/"
+const photoRoute = "https://backendapidashboard.herokuapp.com/images/upload"
+const GalleryRoute = "https://backendapidashboard.herokuapp.com/images/uploadGallery"
+const getRoute = "https://backendapidashboard.herokuapp.com/images/"
 const uploadPhoto = async (FILE)=>{
    const response = await Axios.post(photoRoute, {image: FILE});
    return response;

@@ -1,11 +1,11 @@
 import Axios from "axios"
 const getNews = async ()=>{
-    const news = await Axios.get("http://localhost:5000/news");
+    const news = await Axios.get("https://backendapidashboard.herokuapp.com/news");
     return news;
 }
 const getMoreNews = async (url) =>{
     console.log(typeof url);
-    const news = await Axios.post("http://localhost:5000/news",{url});
+    const news = await Axios.post("https://backendapidashboard.herokuapp.com/news",{url});
     return news;
 }
 export{getNews,getMoreNews};

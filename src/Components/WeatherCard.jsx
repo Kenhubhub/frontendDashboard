@@ -36,7 +36,7 @@ const WeatherCard = () => {
     return ( 
         <div className="weather-card card">
             <h1>Weather</h1>
-            {!info? <p>No data yet</p> : 
+            {!info? <p className="no-data-message">API calls limit exceeded to weatherAPI...</p> : 
             <div className="weather-info">
                 <div className="weather-top">
                     <img src={icon} alt="" />

@@ -16,9 +16,9 @@ const ClothesCard = () => {
         getClothes().then(resp =>{
            resp.data.slice(0,100).forEach( d =>{
                 clothing[d.clothe]++;
-                console.log("here be",clothing["hoodie"])
+                
            })
-           console.log("totals",clothing)
+        
            setData(clothing);
         })
     },[])
