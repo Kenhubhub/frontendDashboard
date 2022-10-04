@@ -2,6 +2,7 @@ import Plus_button from "./Plus_button.png"
 import "../styles/pictures.css"
 import { uploadGallery,getPictures,deletePicture } from "../apiFunctions/photoApi"
 import { useState, useEffect } from "react"
+import Back from "./Back"
 const Pictures = ({User}) => {
     const [pictures,setPictures] = useState();
     useEffect( ()=>{
@@ -23,6 +24,7 @@ const Pictures = ({User}) => {
     }
     return (  
         <div className="pictures-page">
+            <Back></Back>
             <h1>Photos</h1>
             <div className="gallery">
              <div className="upload-img">

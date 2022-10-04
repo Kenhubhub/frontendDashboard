@@ -63,3 +63,7 @@ input[type=checkbox]{
     cursor: pointer;
     background-color: rgb(250, 226, 12);
 }
+.list-item button{
+    background-color: red;
+    font-size: small;
+}

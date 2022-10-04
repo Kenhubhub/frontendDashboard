@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getTasks,updateTask,addTask,deleteTask} from "../apiFunctions/taskApi";
 import "../styles/tasks.css"
 import Plus_button from "./Plus_button_small.png"
+import Back from "./Back";
 const Tasks = ({User}) => {
     const [tasks, setTasks] = useState()
     useEffect( ()=>{
@@ -35,7 +36,7 @@ const Tasks = ({User}) => {
     }
     return (  
         <div className="tasks-page">
-           
+           <Back></Back>
             <h1>Tasks</h1>
             <div className="list-container">
 

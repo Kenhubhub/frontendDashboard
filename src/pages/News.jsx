@@ -1,6 +1,7 @@
 import { useEffect, useState} from "react";
 import {getNews,getMoreNews} from "../apiFunctions/newsApi";
 import "../styles/News.css"
+import Back from "./Back";
 const News = () => {
     const [title, setTitle] = useState();
     const [description, setDescription] = useState()
@@ -23,6 +24,7 @@ const News = () => {
     },[])
     return ( 
         <div className="news-page">
+            <Back />
              <h1>News</h1>
              <div className="news-container">
                 <div className="center">

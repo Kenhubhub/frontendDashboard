@@ -18,6 +18,9 @@ const Dashboard = ({loggedIn, User}) => {
   
     return (
         <div className="dashboard-page">  
+        <div className="backbutton">
+                <button onClick={()=>navigate("/")}>Logout</button>
+            </div>
             <div className="dashboard-header">
                 {User.data.profilePicture === "none"? 
                 <h4>No profile selected</h4>: 

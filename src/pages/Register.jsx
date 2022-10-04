@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { uploadPhoto } from "../apiFunctions/photoApi";
 import { registerUser } from "../apiFunctions/userAuth";
 import "../styles/register.css"
+import "../styles/dashboard.css"
 const Register = () => {
     const navigate = useNavigate();
     const [profilePicture, setProfilePic] = useState();
@@ -44,6 +45,9 @@ const Register = () => {
     }
     return (  
         <div className="register-page">  
+            <div className="backbutton">
+                <button onClick={()=>navigate("/")}>Back</button>
+            </div>
             <h1>Dev Challenge</h1>
             <form onSubmit={ (e)=> handleSubmit(e)}>
                 <div className="top">
