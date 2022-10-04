@@ -11,11 +11,13 @@ const WeatherCard = () => {
     const [location, setLocation] = useState();
     const [temp , setTemp] = useState();
     useEffect( ()=>{
+        console.log("checkpoint 1")
         navigator.geolocation.getCurrentPosition( (position)=>{
             getWeatherInfo(position.coords.longitude,position.coords.latitude).then(
                 resp=>{setInfo(resp);}
             )
         } )
+        console.log("checkpoint 2")
         if(info){
             switch(info.data.weather[0].main){
                 case "Rain":
