@@ -18,4 +18,10 @@ const addTask = async(userId,task,status)=>{
     });
     return addResponse
 }
-export {getTasks,updateTask,addTask}
+
+const deleteTask = async(id)=>{
+    const url = TasksURI + id;
+    const deleteResponse = await Axios.delete(url);
+    return deleteResponse;
+ }
+ export {getTasks,updateTask,addTask,deleteTask}

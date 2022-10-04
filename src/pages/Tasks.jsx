@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getTasks,updateTask,addTask } from "../apiFunctions/taskApi";
+import { getTasks,updateTask,addTask,deleteTask} from "../apiFunctions/taskApi";
 import "../styles/tasks.css"
 import Plus_button from "./Plus_button_small.png"
 const Tasks = ({User}) => {
@@ -42,7 +42,7 @@ const Tasks = ({User}) => {
                 {!tasks? <h2>Loading...</h2>:
                 tasks.map(task =>(
                     
-                    <div className="list-item"key={task._id}> <input onChange={()=>{changeStatus(task._id)}}defaultChecked={task.status === "complete"}type="checkbox" /><p key={task._id}>{task.task}</p></div>
+                    <div className="list-item"key={task._id}><button onClick={()=>{deleteTask(task._id)}}>delete</button> <input onChange={()=>{changeStatus(task._id)}}defaultChecked={task.status === "complete"}type="checkbox" /><p key={task._id}>{task.task}</p></div>
                 )
                 )
                 }
